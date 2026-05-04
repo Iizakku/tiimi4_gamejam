@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://b1a41irx2li62"]
+
+[ext_resource type="Texture2D" uid="uid://d08tdh6lbhtm0" path="res://Art/Sprites/slime_purple.png" id="1_de3k2"]
+[ext_resource type="Script" uid="uid://dd55s5ortus1v" path="res://Code/Characters/enemy.gd" id="1_rw2j8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw2j8"]
+atlas = ExtResource("1_de3k2")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1tmo"]
+atlas = ExtResource("1_de3k2")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3kx8"]
+atlas = ExtResource("1_de3k2")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4j0cx"]
+atlas = ExtResource("1_de3k2")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwo0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw2j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1tmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3kx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4j0cx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_de3k2"]
+size = Vector2(14, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw2j8"]
+size = Vector2(10, 7)
+
+[node name="enemy2" type="Area2D"]
+script = ExtResource("1_rw2j8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_qwo0f")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_de3k2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_rw2j8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
