@@ -17,6 +17,7 @@ scale = Vector2(2, 2)
 
 [node name="enemy2" parent="." instance=ExtResource("2_7x7pb")]
 position = Vector2(169, 116)
+coin_scene = ExtResource("5_tq1so")
 
 [node name="Enemy" parent="." instance=ExtResource("3_yjxcc")]
 position = Vector2(505, 116)
