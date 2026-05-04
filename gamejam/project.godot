@@ -14,6 +14,10 @@ config/name="Gamejam"
 run/main_scene="uid://jaex2211lmyr"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
+[autoload]
+
+GameManager="*res://Code/Systems/GameManager.gd"
+
 [display]
 
 window/size/viewport_width=512
