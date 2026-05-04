@@ -14,6 +14,11 @@ config/name="Gamejam"
 run/main_scene="uid://jaex2211lmyr"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
