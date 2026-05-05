@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -300.0
 
 var has_double_jumped: bool = false
 
