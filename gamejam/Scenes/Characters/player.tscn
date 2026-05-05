@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6cv6tuwyibfu"]
+[gd_scene load_steps=9 format=3 uid="uid://b6cv6tuwyibfu"]
 
 [ext_resource type="Script" uid="uid://bg7ffx6vbybs7" path="res://Code/Characters/player.gd" id="1_40svl"]
 [ext_resource type="Texture2D" uid="uid://deem7ip21nasc" path="res://Art/Sprites/haamu_perus.png" id="2_40svl"]
@@ -36,6 +36,9 @@ animations = [{
 radius = 6.0
 height = 16.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40svl"]
+size = Vector2(12, 3)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_40svl")
@@ -52,3 +55,7 @@ frame_progress = 0.7411572
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("CapsuleShape2D_chxxo")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_40svl")
