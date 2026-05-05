@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://jaex2211lmyr"]
+[gd_scene load_steps=6 format=3 uid="uid://jaex2211lmyr"]
 
 [ext_resource type="PackedScene" uid="uid://b6cv6tuwyibfu" path="res://Scenes/Characters/player.tscn" id="1_f1n8c"]
 [ext_resource type="PackedScene" uid="uid://cbo465hxsmq2e" path="res://Scenes/Levels/tilemap.tscn" id="1_lkqqh"]
 [ext_resource type="PackedScene" uid="uid://b1a41irx2li62" path="res://Scenes/Characters/enemy_2.tscn" id="2_7x7pb"]
 [ext_resource type="PackedScene" uid="uid://b87gsptlg5d6w" path="res://Scenes/Characters/enemy.tscn" id="3_yjxcc"]
+[ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Scenes/Levels/coin.tscn" id="5_tq1so"]
 
 [node name="Level" type="Node2D"]
 
 [node name="Tilemap" parent="." instance=ExtResource("1_lkqqh")]
+texture_filter = 1
 
 [node name="Player" parent="." instance=ExtResource("1_f1n8c")]
 position = Vector2(255, 331)
@@ -15,6 +17,11 @@ scale = Vector2(2, 2)
 
 [node name="enemy2" parent="." instance=ExtResource("2_7x7pb")]
 position = Vector2(169, 116)
+coin_scene = ExtResource("5_tq1so")
 
 [node name="Enemy" parent="." instance=ExtResource("3_yjxcc")]
 position = Vector2(505, 116)
+coin_scene = ExtResource("5_tq1so")
+
+[node name="Coin" parent="." instance=ExtResource("5_tq1so")]
+position = Vector2(124, 293)

@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://bxqokwuh0cjou"]
+[gd_scene load_steps=17 format=3 uid="uid://bxqokwuh0cjou"]
 
+[ext_resource type="Script" uid="uid://dium8gnu71fxb" path="res://Scenes/Levels/coin.gd" id="1_4rem6"]
 [ext_resource type="Texture2D" uid="uid://cq8ynoml5n4mt" path="res://Art/Sprites/coin.png" id="1_tr2tr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4rem6"]
@@ -98,7 +99,7 @@ animations = [{
 }]
 
 [node name="Coin" type="Area2D"]
-scale = Vector2(3, 3)
+script = ExtResource("1_4rem6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4rem6")
@@ -106,4 +107,6 @@ shape = SubResource("CircleShape2D_4rem6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8eye8")
 autoplay = "default"
-frame_progress = 0.39714426
+frame_progress = 0.52274907
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
