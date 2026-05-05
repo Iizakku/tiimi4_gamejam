@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7b724rakr4r1"]
+[gd_scene load_steps=5 format=3 uid="uid://c7b724rakr4r1"]
 
 [ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="1_xwq20"]
+[ext_resource type="Texture2D" uid="uid://c4hank4nxv1v4" path="res://Art/Sprites/Heart&ManaUi.png" id="2_4r020"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r020"]
 bg_color = Color(0.1501219, 0.16849291, 0.40676075, 0.43137255)
@@ -13,6 +14,10 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2vap"]
+atlas = ExtResource("2_4r020")
+region = Rect2(21, 2, 11, 9)
 
 [node name="UI" type="CanvasLayer"]
 
@@ -42,11 +47,25 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4r020")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Hearts"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = -1.0
-offset_bottom = 24.0
-grow_horizontal = 2
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 81.0
+offset_bottom = 22.0
 
 [node name="TextureRect" type="TextureRect" parent="Hearts/HBoxContainer"]
 layout_mode = 2
+texture = SubResource("AtlasTexture_a2vap")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="Hearts/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a2vap")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="Hearts/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a2vap")
+expand_mode = 2
+stretch_mode = 5
