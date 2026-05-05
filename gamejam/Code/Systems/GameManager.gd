@@ -30,7 +30,7 @@ func die():
 	reset()
 	
 	# reload the whole level 
-	get_tree().reload_current_scene()
+	get_tree().call_deferred("reload_current_scene")
 
 # score
 func reset() -> void:
