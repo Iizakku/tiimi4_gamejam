@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://b87gsptlg5d6w" path="res://Scenes/Characters/enemy.tscn" id="3_yjxcc"]
 [ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Scenes/Levels/coin.tscn" id="5_tq1so"]
 [ext_resource type="Script" uid="uid://dgng7n1wow7rl" path="res://Code/Level/spawner.gd" id="6_rv5g2"]
+[ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Code/Level/coin.tscn" id="5_tq1so"]
+[ext_resource type="Script" path="res://Code/Level/spawner.gd" id="6_rv5g2"]
 
 [node name="Level" type="Node2D"]
 
@@ -18,9 +20,6 @@ scale = Vector2(2, 2)
 
 [node name="enemy2" parent="." instance=ExtResource("2_7x7pb")]
 position = Vector2(-33, 115)
-
-[node name="Coin" parent="." instance=ExtResource("5_tq1so")]
-position = Vector2(124, 293)
 
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(551, 115)
