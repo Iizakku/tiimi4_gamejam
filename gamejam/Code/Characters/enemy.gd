@@ -28,6 +28,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			print("Destroy enemy")
 			take_damage(1)
 			body.jump()
+			GameManager.add_score(10)
 		else:
 			print("Decrease players health")
 			GameManager.take_damage()
