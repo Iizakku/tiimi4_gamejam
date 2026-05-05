@@ -20,10 +20,6 @@ scale = Vector2(2, 2)
 position = Vector2(-33, 115)
 coin_scene = ExtResource("5_tq1so")
 
-[node name="Enemy" parent="." instance=ExtResource("3_yjxcc")]
-position = Vector2(543, 115)
-coin_scene = ExtResource("5_tq1so")
-
 [node name="Coin" parent="." instance=ExtResource("5_tq1so")]
 position = Vector2(124, 293)
 
