@@ -8,6 +8,7 @@ class_name enemy
 const speed = 50.0
 var direction = -1.0
 var health = 1
+var dead = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,17 +24,20 @@ func _integrate_forces(state):
 	
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	
+func _on_area_2d_body_entered(body):
 	if body is Player:
-		if body.velocity.y > 0:  # Player is falling down
-			print("Destroy enemy")
-			take_damage(1)
-			body.jump()
-			GameManager.add_score(10)
-		else:
-			print("Decrease players health")
-			GameManager.take_damage()
+		dead = true  # IMPORTANT: prevents double trigger
+
+		take_damage(1)
+		body.jump()
+		call_deferred("queue_free")
+		
+func _on_area_2d_2_body_entered(body):
+	if dead:
+		return
+
+	if body is Player:
+		GameManager.take_damage()
 
 func take_damage(amount: int) -> void:
 	health -= amount
@@ -53,7 +57,3 @@ func die():
 		print("coin_scene is not set!")
 		
 	call_deferred("queue_free")
-
-
-func _on_area_2d_2_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
