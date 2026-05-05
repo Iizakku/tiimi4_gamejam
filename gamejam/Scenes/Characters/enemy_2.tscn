@@ -52,7 +52,7 @@ size = Vector2(16, 5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3kx8"]
 size = Vector2(16, 9)
 
-[node name="enemy2" type="RigidBody2D"]
+[node name="enemy2" type="RigidBody2D" groups=["enemies"]]
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_rw2j8")
 can_sleep = false
