@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1a41irx2li62"]
+[gd_scene load_steps=12 format=3 uid="uid://b1a41irx2li62"]
 
 [ext_resource type="Texture2D" uid="uid://d08tdh6lbhtm0" path="res://Art/Sprites/slime_purple.png" id="1_de3k2"]
-[ext_resource type="Script" uid="uid://dd55s5ortus1v" path="res://Code/Characters/enemy.gd" id="1_rw2j8"]
+[ext_resource type="Script" uid="uid://blg057q77mhbw" path="res://Code/Characters/enemy_2.gd" id="1_rw2j8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rw2j8"]
+friction = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rw2j8"]
 atlas = ExtResource("1_de3k2")
@@ -39,13 +42,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw2j8"]
-size = Vector2(14, 12)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rw2j8"]
+radius = 3.9999957
+height = 13.999983
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_de3k2"]
-size = Vector2(16, 14)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1tmo"]
+size = Vector2(16, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3kx8"]
+size = Vector2(16, 9)
 
 [node name="enemy2" type="RigidBody2D"]
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_rw2j8")
+can_sleep = false
 script = ExtResource("1_rw2j8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -55,18 +65,23 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_rw2j8")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+position = Vector2(-1.8626451e-09, 8)
+rotation = -1.5723352
+shape = SubResource("CapsuleShape2D_rw2j8")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_de3k2")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_s1tmo")
+debug_color = Color(0, 0.64929855, 0.16138288, 0.41960785)
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_p3kx8")
+debug_color = Color(0.99982554, 0, 0.11539257, 0.41960785)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

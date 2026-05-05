@@ -1,4 +1,5 @@
 extends Node2D
+class_name spawner
 
 
 @export var enemy_scene : PackedScene
