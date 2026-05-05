@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=3 uid="uid://dam173dd66ady"]
+
+[ext_resource type="Texture2D" uid="uid://c3481qag5fyj0" path="res://Art/Mainmenu/mainmenu.png" id="1_8d6y7"]
+[ext_resource type="FontFile" uid="uid://gjrvinpgsxyq" path="res://Fonts/PixelOperator8.ttf" id="2_lcqmp"]
+[ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="3_ija1k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xwnjv"]
+texture = ExtResource("1_8d6y7")
+modulate_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luq7i"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.65882355)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xwnjv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = 3.0
+offset_right = 89.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_lcqmp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+text = "Options"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 67.0
+offset_right = 90.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_lcqmp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+text = "Quit"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -60.0
+offset_right = 89.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_lcqmp")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+text = "Start game"
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -125.0
+offset_right = 143.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.4, 0.45490196, 0.8235294, 0.41568628)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_ija1k")
+theme_override_font_sizes/font_size = 20
+text = "Haunted Mansion
+
+"
