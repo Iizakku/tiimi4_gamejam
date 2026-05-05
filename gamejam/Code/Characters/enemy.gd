@@ -24,11 +24,9 @@ func _integrate_forces(state):
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
 	if body is Player:
-		var y_delta = body.position.y - position.y
-		print("y_delta: ", y_delta) 
-		if (y_delta < 0 ):
+		if body.velocity.y > 0:  # Player is falling down
 			print("Destroy enemy")
-			take_damage(1)  #Voi muokata kuinka paljon damagee vihollinen ottaa
+			take_damage(1)
 			body.jump()
 		else:
 			print("Decrease players health")
@@ -52,3 +50,7 @@ func die():
 		print("coin_scene is not set!")
 		
 	call_deferred("queue_free")
+
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
