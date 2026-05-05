@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://jaex2211lmyr"]
+[gd_scene load_steps=11 format=3 uid="uid://jaex2211lmyr"]
 
 [ext_resource type="PackedScene" uid="uid://b6cv6tuwyibfu" path="res://Scenes/Characters/player.tscn" id="1_f1n8c"]
+[ext_resource type="Script" uid="uid://cldhofoo88aks" path="res://Code/Level/level.gd" id="1_i5435"]
 [ext_resource type="PackedScene" uid="uid://cbo465hxsmq2e" path="res://Scenes/Levels/tilemap.tscn" id="1_lkqqh"]
 [ext_resource type="PackedScene" uid="uid://b1a41irx2li62" path="res://Scenes/Characters/enemy_2.tscn" id="2_7x7pb"]
 [ext_resource type="PackedScene" uid="uid://b87gsptlg5d6w" path="res://Scenes/Characters/enemy.tscn" id="3_yjxcc"]
@@ -8,7 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://c7b724rakr4r1" path="res://Scenes/Levels/ui.tscn" id="6_lhx7y"]
 [ext_resource type="Script" uid="uid://dgng7n1wow7rl" path="res://Code/Level/spawner.gd" id="6_rv5g2"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5435"]
+size = Vector2(19.5, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbixu"]
+size = Vector2(21.75, 33)
+
 [node name="Level" type="Node2D"]
+script = ExtResource("1_i5435")
 
 [node name="Tilemap" parent="." instance=ExtResource("1_lkqqh")]
 texture_filter = 1
@@ -37,5 +45,28 @@ autostart = true
 
 [node name="UI" parent="." instance=ExtResource("6_lhx7y")]
 
+[node name="LeftPortal" type="Area2D" parent="."]
+position = Vector2(-9, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPortal"]
+position = Vector2(-29, 287)
+shape = SubResource("RectangleShape2D_i5435")
+
+[node name="RightPortal" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPortal"]
+position = Vector2(549.875, 287)
+shape = SubResource("RectangleShape2D_jbixu")
+
+[node name="LeftSpawn" type="Marker2D" parent="."]
+position = Vector2(-6, 292)
+
+[node name="RightSpawn" type="Marker2D" parent="."]
+position = Vector2(518, 294)
+
 [connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawner2/Timer" to="Spawner2" method="_on_timer_timeout"]
+[connection signal="body_entered" from="LeftPortal" to="." method="_on_left_portal_body_entered"]
+[connection signal="body_entered" from="RightPortal" to="." method="_on_right_portal_body_entered"]
