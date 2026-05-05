@@ -1,12 +1,12 @@
 extends RigidBody2D
-class_name enemy
+class_name enemy_2
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var coin_scene: PackedScene
 
 
 const speed = 50.0
-var direction = -1.0
+var direction = 1.0
 var health = 1
 
 

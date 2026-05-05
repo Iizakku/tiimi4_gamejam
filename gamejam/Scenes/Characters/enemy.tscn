@@ -54,6 +54,7 @@ size = Vector2(16, 5)
 size = Vector2(16, 9)
 
 [node name="Enemy" type="RigidBody2D"]
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_b1c4r")
 can_sleep = false
 script = ExtResource("1_b1c4r")
