@@ -2,23 +2,23 @@ extends RigidBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var coin_scene: PackedScene
 
+
 const speed = 50.0
 var direction = -1.0
 var health = 1
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	lock_rotation = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	position.x += direction * speed * delta
-
-
-func _on_timer_timeout() -> void:
-	direction *= -1
-	animated_sprite_2d.flip_h = !animated_sprite_2d.flip_h
+func _integrate_forces(state):
+	var velocity = state.linear_velocity
+	velocity.x = direction * speed
+	state.linear_velocity = velocity
+	
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
