@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://ceqlfwen0ye0l" path="res://Art/Sprites/slime_green.png" id="1_lsx3x"]
 [ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Code/Level/coin.tscn" id="2_ixshx"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b1c4r"]
+friction = 0.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1c4r"]
 atlas = ExtResource("1_lsx3x")
 region = Rect2(0, 24, 24, 24)
@@ -40,13 +43,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr4mm"]
-size = Vector2(14, 12)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1c4r"]
+radius = 1.9999971
+height = 15.999981
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwe5h"]
-size = Vector2(16, 14)
+size = Vector2(16, 13)
 
 [node name="Enemy" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_b1c4r")
+can_sleep = false
 script = ExtResource("1_b1c4r")
 coin_scene = ExtResource("2_ixshx")
 
@@ -57,13 +63,14 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6)
-shape = SubResource("RectangleShape2D_tr4mm")
+position = Vector2(0, 10)
+rotation = -1.5723352
+shape = SubResource("CapsuleShape2D_b1c4r")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 6)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_gwe5h")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var coin_scene: PackedScene
 
 
-const speed = 50.0
+const speed = 30.0
 var direction = -1.0
 var health = 1
 
