@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 		# reset double jump
 		has_double_jumped = false
 	
+	_update_animations()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -51,3 +52,11 @@ func _physics_process(delta: float) -> void:
 	#Tämä käsittelee hypyn vihollista tappaessa
 func jump(strength := JUMP_VELOCITY):
 	velocity.y = strength
+	
+func _update_animations() -> void:
+	if not is_on_floor():
+		animated_sprite.play("jump")
+	elif is_zero_approx(velocity.x):
+		animated_sprite.play("idle")
+	else: 
+		animated_sprite.play("run")

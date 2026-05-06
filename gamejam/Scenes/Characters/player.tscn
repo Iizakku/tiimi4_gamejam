@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6cv6tuwyibfu"]
+[gd_scene load_steps=13 format=3 uid="uid://b6cv6tuwyibfu"]
 
 [ext_resource type="Script" uid="uid://bg7ffx6vbybs7" path="res://Code/Characters/player.gd" id="1_40svl"]
 [ext_resource type="Texture2D" uid="uid://deem7ip21nasc" path="res://Art/Sprites/haamu_perus.png" id="2_40svl"]
@@ -15,6 +15,26 @@ region = Rect2(32, 32, 32, 32)
 atlas = ExtResource("2_40svl")
 region = Rect2(64, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_40svl"]
+atlas = ExtResource("2_40svl")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khnq4"]
+atlas = ExtResource("2_40svl")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utp2y"]
+atlas = ExtResource("2_40svl")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdgf0"]
+atlas = ExtResource("2_40svl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo8ps"]
+atlas = ExtResource("2_40svl")
+region = Rect2(32, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_khnq4"]
 animations = [{
 "frames": [{
@@ -28,7 +48,32 @@ animations = [{
 "texture": SubResource("AtlasTexture_cqrjx")
 }],
 "loop": true,
-"name": &"Idle",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40svl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khnq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utp2y")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdgf0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo8ps")
+}],
+"loop": true,
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -45,9 +90,9 @@ texture_filter = 1
 position = Vector2(0, -8)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_khnq4")
-animation = &"Idle"
-autoplay = "Idle"
-frame_progress = 0.7411572
+animation = &"jump"
+autoplay = "idle"
+frame_progress = 0.41823375
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
