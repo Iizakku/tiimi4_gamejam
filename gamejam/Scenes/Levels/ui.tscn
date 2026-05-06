@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7b724rakr4r1"]
+[gd_scene load_steps=9 format=3 uid="uid://c7b724rakr4r1"]
 
 [ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="1_xwq20"]
 [ext_resource type="Texture2D" uid="uid://c4hank4nxv1v4" path="res://Art/Sprites/Heart&ManaUi.png" id="2_4r020"]
 [ext_resource type="Script" uid="uid://k7o8xei8cjgk" path="res://Scenes/Levels/hearts.gd" id="2_a2vap"]
 [ext_resource type="Script" uid="uid://dafcxaaeskyvj" path="res://Scenes/Levels/label.gd" id="2_f7omg"]
+[ext_resource type="Texture2D" uid="uid://btk4wcxkftij6" path="res://Art/Mainmenu/Keyboard Extras.png" id="3_bx3gy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r020"]
 bg_color = Color(0.1501219, 0.16849291, 0.40676075, 0.43137255)
@@ -16,6 +17,10 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm34j"]
+texture = ExtResource("3_bx3gy")
+region_rect = Rect2(36.31147, 0.7358265, 23.483139, 13.669291)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2vap"]
 atlas = ExtResource("2_4r020")
@@ -40,6 +45,35 @@ theme_override_fonts/font = ExtResource("1_xwq20")
 theme_override_font_sizes/font_size = 8
 text = "SCORE: "
 script = ExtResource("2_f7omg")
+
+[node name="Pause" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -103.0
+offset_top = 14.0
+offset_right = -17.0
+offset_bottom = 38.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r020")
+
+[node name="Label" type="Label" parent="Pause"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 74.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("1_xwq20")
+theme_override_font_sizes/font_size = 8
+text = "PAUSE:"
+
+[node name="Panel" type="Panel" parent="Pause"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 1.0
+offset_right = 85.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gm34j")
 
 [node name="Hearts" type="Panel" parent="."]
 offset_left = 20.0

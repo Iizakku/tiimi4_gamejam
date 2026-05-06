@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dam173dd66ady"]
+[gd_scene load_steps=24 format=3 uid="uid://dam173dd66ady"]
 
 [ext_resource type="Texture2D" uid="uid://c3481qag5fyj0" path="res://Art/Mainmenu/mainmenu.png" id="1_d2tbo"]
 [ext_resource type="Script" uid="uid://car5v7lo820ws" path="res://Scenes/Levels/main_menu.gd" id="1_v2at7"]
@@ -12,12 +12,54 @@ texture = ExtResource("1_d2tbo")
 modulate_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luq7i"]
-bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.65882355)
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82l7r"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xmls"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0g5v"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybd2e"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwjnk"]
+bg_color = Color(0.21005294, 0.2360931, 0.5408073, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iruej"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -45,6 +87,34 @@ region_rect = Rect2(0.13965988, 32.543167, 14.746571, 14.746571)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iruej"]
 texture = ExtResource("6_iruej")
 region_rect = Rect2(47.593475, 33.184265, 16.095459, 14.008549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm8k6"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1w1t"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv2kq"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp410"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -80,6 +150,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_v2at7")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_82l7r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xmls")
 text = "Help
 "
 
@@ -99,6 +171,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_v2at7")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x0g5v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ybd2e")
 text = "Quit"
 
 [node name="Startgame" type="Button" parent="."]
@@ -117,6 +191,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_v2at7")
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cwjnk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iruej")
 text = "Start game"
 
 [node name="HauntedMansion" type="Label" parent="."]
@@ -143,7 +219,6 @@ text = "Haunted Mansion
 "
 
 [node name="Help" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -233,6 +308,8 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_v2at7")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lm8k6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p1w1t")
 text = "Back"
 
 [node name="Instructions" type="Panel" parent="."]
@@ -289,7 +366,7 @@ text = "Kill as many enemies you can and
 "
 horizontal_alignment = 1
 
-[node name="BackButton" type="Button" parent="Instructions"]
+[node name="StartButton" type="Button" parent="Instructions"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -306,10 +383,12 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_v2at7")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kv2kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xp410")
 text = "Start"
 
 [connection signal="pressed" from="Help2" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Startgame" to="." method="_on_startgame_pressed"]
 [connection signal="pressed" from="Help/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Instructions/BackButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Instructions/StartButton" to="." method="_on_start_button_pressed"]
