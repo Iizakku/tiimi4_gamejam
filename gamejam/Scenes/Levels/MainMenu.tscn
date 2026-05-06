@@ -64,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xwnjv")
 
-[node name="Button" type="Button" parent="."]
+[node name="Help2" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -83,7 +83,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
 text = "Help
 "
 
-[node name="Button3" type="Button" parent="."]
+[node name="Quit" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -101,7 +101,7 @@ theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
 text = "Quit"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Startgame" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -143,6 +143,7 @@ text = "Haunted Mansion
 "
 
 [node name="Help" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -234,7 +235,81 @@ theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
 text = "Back"
 
-[connection signal="pressed" from="Button" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Button3" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_startgame_pressed"]
+[node name="Instructions" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -80.0
+offset_right = 182.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dgdn")
+
+[node name="Instructions" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -87.5
+offset_right = 98.0
+offset_bottom = -64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 16
+text = "Instructions"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -18.5
+offset_right = 181.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 12
+text = "Kill as many enemies you can and
+ collect coins for some extra points
+
+"
+horizontal_alignment = 1
+
+[node name="BackButton" type="Button" parent="Instructions"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 62.5
+offset_right = 64.5
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+text = "Start"
+
+[connection signal="pressed" from="Help2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Startgame" to="." method="_on_startgame_pressed"]
 [connection signal="pressed" from="Help/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Instructions/BackButton" to="." method="_on_start_button_pressed"]
