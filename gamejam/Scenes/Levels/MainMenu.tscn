@@ -74,7 +74,7 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybd2e"]
 texture = ExtResource("5_cwjnk")
-region_rect = Rect2(96.40823, 15.5, 31.544449, 17.088562)
+region_rect = Rect2(63.299553, 31.929848, 32.59601, 15.772255)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0g5v"]
 texture = ExtResource("6_iruej")
@@ -313,6 +313,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_p1w1t")
 text = "Back"
 
 [node name="Instructions" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
