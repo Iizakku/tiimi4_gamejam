@@ -54,6 +54,8 @@ func take_damage(amount: int) -> void:
 func die():
 	print("Enemy died!")
 
+	GameManager.add_score(20)
+	
 	if coin_scene:
 		var coin = coin_scene.instantiate()
 		get_parent().add_child(coin)
