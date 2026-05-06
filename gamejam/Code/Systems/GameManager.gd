@@ -11,12 +11,25 @@ var _score : int = 0
 # Player's lives
 var max_lives: int = 3
 var current_lives: int = 3
+var can_take_damage = true
 
-# health
+@export var damage_cooldown = 0.5
+
+
+func start_damage_cooldown():
+	await get_tree().create_timer(damage_cooldown).timeout
+	can_take_damage = true
+
 func take_damage():
+	if !can_take_damage:
+		return
+		
+	can_take_damage = false
+	
 	current_lives -= 1
 	lives_changed.emit(current_lives)
-	
+	# a slight delay on damage to prevent multiple hits at once
+	start_damage_cooldown()
 	# check if there are no lives left
 	if current_lives <= 0:
 		die()
