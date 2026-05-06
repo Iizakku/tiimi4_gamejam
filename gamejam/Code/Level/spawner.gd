@@ -3,9 +3,16 @@ class_name spawner
 
 
 @export var enemy_scene : PackedScene
+@export var max_enemies = 10
+var current_enemies = 0
 
 
 func _on_timer_timeout() -> void:
+	if current_enemies >= max_enemies:
+		return
+		
 	var enemy = enemy_scene.instantiate()
 	enemy.position = position
 	get_parent().add_child(enemy)
+	
+	current_enemies += 1
