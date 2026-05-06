@@ -44,14 +44,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1c4r"]
-radius = 3.9999957
+radius = 3.9999962
 height = 13.999983
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwe5h"]
 size = Vector2(10, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixshx"]
-size = Vector2(16, 8)
+size = Vector2(16, 6.846154)
 
 [node name="Enemy" type="RigidBody2D" groups=["enemies"]]
 collision_layer = 2
@@ -83,7 +83,7 @@ debug_color = Color(0, 0.64929855, 0.16138288, 0.41960785)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
-position = Vector2(0, 8)
+position = Vector2(-1.7881393e-07, 8.559999)
 shape = SubResource("RectangleShape2D_ixshx")
 debug_color = Color(0.99982554, 0, 0.11539257, 0.41960785)
 

@@ -8,7 +8,7 @@ class_name enemy
 const speed = 50.0
 var direction = -1.0
 var health = 1
-var dead = false
+var invulnerable = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,17 +26,20 @@ func _integrate_forces(state):
 
 func _on_area_2d_body_entered(body):
 	if body is Player:
-		dead = true  # IMPORTANT: prevents double trigger
+		invulnerable = true  # IMPORTANT: prevents double trigger
 
 		take_damage(1)
 		body.jump()
 		call_deferred("queue_free")
 		
 func _on_area_2d_2_body_entered(body):
-	if dead:
+	if invulnerable:
 		return
 
 	if body is Player:
+		if body.velocity.y > 0:
+			return
+			
 		GameManager.take_damage()
 
 func take_damage(amount: int) -> void:
