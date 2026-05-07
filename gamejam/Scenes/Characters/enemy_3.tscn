@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dsqlyp63v0fx8"]
+
+[ext_resource type="Script" uid="uid://csfywwxfq4h51" path="res://Code/Characters/enemy_3.gd" id="1_2k5vt"]
+[ext_resource type="Texture2D" uid="uid://du4si0n23ym0q" path="res://Art/Sprites/lepakko.png" id="1_r377l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k5vt"]
+atlas = ExtResource("1_r377l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h121c"]
+atlas = ExtResource("1_r377l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmncw"]
+atlas = ExtResource("1_r377l")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r6gke"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k5vt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h121c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmncw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r377l"]
+radius = 6.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2k5vt"]
+radius = 8.0
+height = 16.0
+
+[node name="enemy_3" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_2k5vt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r6gke")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_r377l")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+shape = SubResource("CapsuleShape2D_2k5vt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
