@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://dam173dd66ady"]
 
 [ext_resource type="Texture2D" uid="uid://c3481qag5fyj0" path="res://Art/Mainmenu/mainmenu.png" id="1_d2tbo"]
-[ext_resource type="Script" uid="uid://car5v7lo820ws" path="res://Code/UI/main_menu.gd" id="1_v2at7"]
+[ext_resource type="Script" uid="uid://car5v7lo820ws" path="res://Scenes/Levels/main_menu.gd" id="1_v2at7"]
 [ext_resource type="FontFile" uid="uid://gjrvinpgsxyq" path="res://Fonts/PixelOperator8.ttf" id="2_v2at7"]
 [ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="3_0t1wx"]
 [ext_resource type="Texture2D" uid="uid://btk4wcxkftij6" path="res://Art/Mainmenu/Keyboard Extras.png" id="5_cwjnk"]

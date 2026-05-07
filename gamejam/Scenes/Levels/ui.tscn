@@ -2,8 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="1_xwq20"]
 [ext_resource type="Texture2D" uid="uid://c4hank4nxv1v4" path="res://Art/Sprites/Heart&ManaUi.png" id="2_4r020"]
-[ext_resource type="Script" uid="uid://k7o8xei8cjgk" path="res://Code/UI/hearts.gd" id="2_a2vap"]
-[ext_resource type="Script" uid="uid://dafcxaaeskyvj" path="res://Code/UI/label.gd" id="2_f7omg"]
+[ext_resource type="Script" uid="uid://k7o8xei8cjgk" path="res://Scenes/Levels/hearts.gd" id="2_a2vap"]
+[ext_resource type="Script" uid="uid://dafcxaaeskyvj" path="res://Scenes/Levels/label.gd" id="2_f7omg"]
 [ext_resource type="Texture2D" uid="uid://btk4wcxkftij6" path="res://Art/Mainmenu/Keyboard Extras.png" id="3_bx3gy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r020"]

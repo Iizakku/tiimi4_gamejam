@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://bc3uyrfrleqom"]
 
 [ext_resource type="Texture2D" uid="uid://c3481qag5fyj0" path="res://Art/Mainmenu/mainmenu.png" id="1_cfvhd"]
-[ext_resource type="Script" uid="uid://c33ro14h7njdh" path="res://Code/UI/game_over.gd" id="1_rohwx"]
+[ext_resource type="Script" uid="uid://c33ro14h7njdh" path="res://Scenes/Levels/game_over.gd" id="1_rohwx"]
 [ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="2_rohwx"]
 [ext_resource type="FontFile" uid="uid://gjrvinpgsxyq" path="res://Fonts/PixelOperator8.ttf" id="3_0qwdj"]
-[ext_resource type="Script" uid="uid://dafcxaaeskyvj" path="res://Code/UI/label.gd" id="4_l0mjm"]
+[ext_resource type="Script" uid="uid://dafcxaaeskyvj" path="res://Scenes/Levels/label.gd" id="4_l0mjm"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stgsc"]
 texture = ExtResource("1_cfvhd")
