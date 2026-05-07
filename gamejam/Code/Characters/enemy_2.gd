@@ -82,7 +82,7 @@ func die(give_score := true, drop_loot := true):
 	sound.play()
 
 	if give_score:
-		GameManager.add_score(10)
+		GameManager.add_score(20)
 	
 	if drop_loot and coin_scene:
 		var coin = coin_scene.instantiate()

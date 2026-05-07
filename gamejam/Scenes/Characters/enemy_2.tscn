@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://blg057q77mhbw" path="res://Code/Characters/enemy_2.gd" id="1_rw2j8"]
 [ext_resource type="Texture2D" uid="uid://htegoyvjc4bu" path="res://Art/Sprites/luuranko.png" id="2_rw2j8"]
-[ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Code/Level/coin.tscn" id="2_s1tmo"]
+[ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Scenes/Levels/LevelObjects/coin.tscn" id="2_s1tmo"]
 [ext_resource type="AudioStream" uid="uid://vo2tomixp5hi" path="res://Audio/skeleton_death.wav" id="4_p3kx8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rw2j8"]
