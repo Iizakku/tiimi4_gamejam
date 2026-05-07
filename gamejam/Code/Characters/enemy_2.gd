@@ -21,10 +21,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _integrate_forces(state):
+	if freeze:
+		state.linear_velocity = Vector2.ZERO
+		return
+		
 	var velocity = state.linear_velocity
 	velocity.x = direction * speed
 	state.linear_velocity = velocity
-	
 
 
 func _on_area_2d_body_entered(body):
@@ -80,3 +83,18 @@ func die():
 		print("coin_scene is not set!")
 		
 	call_deferred("queue_free")
+
+# Tällä pysäytetään vihollinen
+func freeze_enemy(duration: float):
+	print("Enemy freeze")	
+	freeze = true 
+	
+	if animated_sprite_2d:
+		animated_sprite_2d.pause()
+
+	await get_tree().create_timer(duration).timeout
+
+	if is_instance_valid(self):
+		freeze = false
+		if animated_sprite_2d:
+			animated_sprite_2d.play()
