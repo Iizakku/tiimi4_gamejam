@@ -1,11 +1,11 @@
 [gd_scene load_steps=18 format=3 uid="uid://d0pfh1lxtbwfw"]
 
-[ext_resource type="Script" uid="uid://c33ro14h7njdh" path="res://Scenes/Levels/game_over.gd" id="1_fxbpm"]
+[ext_resource type="Script" uid="uid://c33ro14h7njdh" path="res://Code/UI/game_over.gd" id="1_fxbpm"]
 [ext_resource type="Texture2D" uid="uid://c3481qag5fyj0" path="res://Art/Mainmenu/mainmenu.png" id="2_aqauf"]
 [ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="3_prerj"]
 [ext_resource type="FontFile" uid="uid://gjrvinpgsxyq" path="res://Fonts/PixelOperator8.ttf" id="4_4ta8n"]
-[ext_resource type="Script" uid="uid://bpygvh3hg7w8l" path="res://Scenes/Levels/highest.gd" id="5_aqauf"]
-[ext_resource type="Script" uid="uid://cs3t8aueq7t56" path="res://Scenes/Levels/scorelabel.gd" id="6_aqauf"]
+[ext_resource type="Script" uid="uid://bpygvh3hg7w8l" path="res://Code/Level/highest.gd" id="5_aqauf"]
+[ext_resource type="Script" uid="uid://cs3t8aueq7t56" path="res://Code/UI/scorelabel.gd" id="6_aqauf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stgsc"]
 texture = ExtResource("2_aqauf")

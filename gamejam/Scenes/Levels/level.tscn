@@ -67,6 +67,12 @@ collision_mask = 2
 position = Vector2(549.875, 287)
 shape = SubResource("RectangleShape2D_jbixu")
 
+[node name="LeftSpawn" type="Marker2D" parent="Portals"]
+position = Vector2(-6, 292)
+
+[node name="RightSpawn" type="Marker2D" parent="Portals"]
+position = Vector2(518, 294)
+
 [node name="LevelUI" type="Node" parent="."]
 
 [node name="UI" parent="LevelUI" instance=ExtResource("6_lhx7y")]
@@ -95,12 +101,6 @@ enemy_2_scene = ExtResource("2_7x7pb")
 [node name="Timer" type="Timer" parent="Spawners/Spawner2"]
 wait_time = 8.0
 autostart = true
-
-[node name="LeftSpawn" type="Marker2D" parent="Spawners"]
-position = Vector2(-6, 292)
-
-[node name="RightSpawn" type="Marker2D" parent="Spawners"]
-position = Vector2(518, 294)
 
 [node name="PlayerWall" type="Node" parent="."]
 
