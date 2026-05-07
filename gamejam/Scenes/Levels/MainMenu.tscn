@@ -219,6 +219,7 @@ text = "Haunted Mansion
 "
 
 [node name="Help" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -362,6 +363,9 @@ theme_override_fonts/font = ExtResource("2_v2at7")
 theme_override_font_sizes/font_size = 12
 text = "Kill as many enemies you can and
  collect coins for some extra points
+
+HINT! use special hitboxes to get
+leverage on enemies
 
 "
 horizontal_alignment = 1
