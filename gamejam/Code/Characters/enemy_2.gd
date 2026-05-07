@@ -86,7 +86,7 @@ func die(give_score := true, drop_loot := true):
 	
 	if drop_loot and coin_scene:
 		var coin = coin_scene.instantiate()
-		get_parent().add_child(coin)
+		get_parent().call_deferred("add_child", coin)
 		var spawn_pos = global_position + Vector2(randf_range(-50, 50), -30)
 
 		spawn_pos.x = clamp(spawn_pos.x, 0, 512)
@@ -101,7 +101,7 @@ func die(give_score := true, drop_loot := true):
 # Tällä pysäytetään vihollinen
 func freeze_enemy(duration: float):
 	print("Enemy freeze")	
-	freeze = true 
+	set_deferred("freeze", true) 
 	
 	if animated_sprite_2d:
 		animated_sprite_2d.pause()

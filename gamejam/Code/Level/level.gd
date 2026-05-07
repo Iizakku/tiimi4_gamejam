@@ -1,10 +1,9 @@
 extends Node2D
+@onready var left_portal: Area2D = $Portals/LeftPortal
+@onready var right_portal: Area2D = $Portals/RightPortal
 
-@onready var left_portal: Area2D = $LeftPortal
-@onready var right_portal: Area2D = $RightPortal
-
-@onready var left_spawn: Marker2D = $LeftSpawn
-@onready var right_spawn: Marker2D = $RightSpawn
+@onready var left_spawn: Marker2D = $Portals/LeftSpawn
+@onready var right_spawn: Marker2D = $Portals/RightSpawn
 
 var enemies_killed = 0
 

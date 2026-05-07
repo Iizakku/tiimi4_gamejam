@@ -7,7 +7,7 @@ signal score_changed(new_score : int)
 signal lives_changed(current_lives : int)
 
 func game_over():
-	get_tree().change_scene_to_file("res://Scenes/Levels/game_over.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://Scenes/UI/game_over.tscn")
 
 #Player's score in this session
 var _score : int = 0
