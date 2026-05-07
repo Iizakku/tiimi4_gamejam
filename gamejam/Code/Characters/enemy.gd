@@ -5,6 +5,7 @@ signal died(enemy)
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var coin_scene: PackedScene
+@onready var die_sound_2: AudioStreamPlayer2D = $DieSound2
 
 
 const speed = 50.0
@@ -57,11 +58,24 @@ func take_damage(amount: int) -> void:
 
 func die(give_score := true, drop_loot := true):
 	print("Enemy died!")
+<<<<<<< Updated upstream
 	if dead:
 		return
 	dead = true
 	died.emit(self)
 	print("kuoli")
+=======
+	var sound = die_sound_2
+	remove_child(sound)
+	get_parent().add_child(sound)
+	sound.global_position = global_position
+	sound.play()
+	
+	if health <= 0:
+		dead = true
+		died.emit(self)
+		print("kuoli")
+>>>>>>> Stashed changes
 
 	if give_score:
 		GameManager.add_score(10)

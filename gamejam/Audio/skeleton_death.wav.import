@@ -1,0 +1,28 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+<<<<<<< Updated upstream
+uid="uid://vv063s3ivwql"
+=======
+uid="uid://cmkbdl283ape0"
+>>>>>>> Stashed changes
+path="res://.godot/imported/skeleton_death.wav-224fdfbc7fc25e40ed2a85152f4d1508.sample"
+
+[deps]
+
+source_file="res://Audio/skeleton_death.wav"
+dest_files=["res://.godot/imported/skeleton_death.wav-224fdfbc7fc25e40ed2a85152f4d1508.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

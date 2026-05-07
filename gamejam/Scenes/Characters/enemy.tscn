@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b87gsptlg5d6w"]
+[gd_scene load_steps=14 format=3 uid="uid://b87gsptlg5d6w"]
 
 [ext_resource type="Script" uid="uid://dd55s5ortus1v" path="res://Code/Characters/enemy.gd" id="1_b1c4r"]
 [ext_resource type="Texture2D" uid="uid://ceqlfwen0ye0l" path="res://Art/Sprites/slime_green.png" id="1_lsx3x"]
 [ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Code/Level/coin.tscn" id="2_ixshx"]
+[ext_resource type="AudioStream" uid="uid://bpen81v5uq127" path="res://Audio/slime_death.ogg" id="4_4453e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b1c4r"]
 friction = 0.0
@@ -86,6 +87,9 @@ collision_layer = 2
 position = Vector2(-1.7881393e-07, 8.559999)
 shape = SubResource("RectangleShape2D_ixshx")
 debug_color = Color(0.99982554, 0, 0.11539257, 0.41960785)
+
+[node name="DieSound2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4453e")
 
 [connection signal="body_entered" from="StompArea" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="BodyArea" to="." method="_on_area_2d_2_body_entered"]
