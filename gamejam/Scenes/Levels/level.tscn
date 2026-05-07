@@ -13,9 +13,6 @@
 [ext_resource type="AudioStream" uid="uid://q35hwguf1u6v" path="res://Audio/Memoraphile_Spooky _Dungeon.mp3" id="11_j3yal"]
 [ext_resource type="PackedScene" uid="uid://nhjneo3dq57" path="res://Scenes/Levels/LevelObjects/stop_button.tscn" id="12_r0lyn"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j3yal"]
-distance = -400.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5435"]
 size = Vector2(19.5, 33)
 
@@ -25,6 +22,9 @@ size = Vector2(21.75, 33)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_i5435"]
 a = Vector2(0, 408)
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j3yal"]
+distance = -400.0
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_i5435")
 
@@ -33,6 +33,66 @@ texture_filter = 1
 
 [node name="Player" parent="." instance=ExtResource("1_f1n8c")]
 position = Vector2(255, 331)
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(551, 115)
+script = ExtResource("6_rv5g2")
+enemy_scene = ExtResource("3_yjxcc")
+
+[node name="Timer" type="Timer" parent="Spawner"]
+wait_time = 3.5
+autostart = true
+
+[node name="Spawner2" type="Node2D" parent="."]
+position = Vector2(-35, 112)
+script = ExtResource("5_rv5g2")
+enemy_2_scene = ExtResource("2_7x7pb")
+
+[node name="Timer" type="Timer" parent="Spawner2"]
+wait_time = 8.0
+autostart = true
+
+[node name="UI" parent="." instance=ExtResource("6_lhx7y")]
+
+[node name="LeftPortal" type="Area2D" parent="."]
+position = Vector2(-9, 0)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPortal"]
+position = Vector2(-29, 287)
+shape = SubResource("RectangleShape2D_i5435")
+
+[node name="RightPortal" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPortal"]
+position = Vector2(549.875, 287)
+shape = SubResource("RectangleShape2D_jbixu")
+
+[node name="LeftSpawn" type="Marker2D" parent="."]
+position = Vector2(-6, 292)
+
+[node name="RightSpawn" type="Marker2D" parent="."]
+position = Vector2(518, 294)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("9_jbixu")]
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, -7)
+shape = SubResource("SegmentShape2D_i5435")
+
+[node name="Area2D2" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(514, -10)
+shape = SubResource("SegmentShape2D_i5435")
 
 [node name="Killzone" type="Area2D" parent="."]
 collision_mask = 2
@@ -50,76 +110,8 @@ parameters/looping = true
 [node name="StopButton" parent="." instance=ExtResource("12_r0lyn")]
 position = Vector2(255, 98)
 
-[node name="Portals" type="Node" parent="."]
-
-[node name="LeftPortal" type="Area2D" parent="Portals"]
-position = Vector2(-9, 0)
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/LeftPortal"]
-position = Vector2(-29, 287)
-shape = SubResource("RectangleShape2D_i5435")
-
-[node name="RightPortal" type="Area2D" parent="Portals"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portals/RightPortal"]
-position = Vector2(549.875, 287)
-shape = SubResource("RectangleShape2D_jbixu")
-
-[node name="LevelUI" type="Node" parent="."]
-
-[node name="UI" parent="LevelUI" instance=ExtResource("6_lhx7y")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="LevelUI"]
-visible = false
-
-[node name="PauseMenu" parent="LevelUI/CanvasLayer" instance=ExtResource("9_jbixu")]
-
-[node name="Spawners" type="Node" parent="."]
-
-[node name="Spawner" type="Node2D" parent="Spawners"]
-position = Vector2(551, 115)
-script = ExtResource("6_rv5g2")
-enemy_scene = ExtResource("3_yjxcc")
-
-[node name="Timer" type="Timer" parent="Spawners/Spawner"]
-wait_time = 3.5
-autostart = true
-
-[node name="Spawner2" type="Node2D" parent="Spawners"]
-position = Vector2(-35, 112)
-script = ExtResource("5_rv5g2")
-enemy_2_scene = ExtResource("2_7x7pb")
-
-[node name="Timer" type="Timer" parent="Spawners/Spawner2"]
-wait_time = 8.0
-autostart = true
-
-[node name="LeftSpawn" type="Marker2D" parent="Spawners"]
-position = Vector2(-6, 292)
-
-[node name="RightSpawn" type="Marker2D" parent="Spawners"]
-position = Vector2(518, 294)
-
-[node name="PlayerWall" type="Node" parent="."]
-
-[node name="Area2D" type="StaticBody2D" parent="PlayerWall"]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWall/Area2D"]
-position = Vector2(-2, -7)
-shape = SubResource("SegmentShape2D_i5435")
-
-[node name="Area2D2" type="StaticBody2D" parent="PlayerWall"]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerWall/Area2D2"]
-position = Vector2(514, -10)
-shape = SubResource("SegmentShape2D_i5435")
-
+[connection signal="timeout" from="Spawner/Timer" to="Spawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawner2/Timer" to="Spawner2" method="_on_timer_timeout"]
+[connection signal="body_entered" from="LeftPortal" to="." method="_on_left_portal_body_entered"]
+[connection signal="body_entered" from="RightPortal" to="." method="_on_right_portal_body_entered"]
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
-[connection signal="body_entered" from="Portals/LeftPortal" to="." method="_on_left_portal_body_entered"]
-[connection signal="body_entered" from="Portals/RightPortal" to="." method="_on_right_portal_body_entered"]
-[connection signal="timeout" from="Spawners/Spawner/Timer" to="Spawners/Spawner" method="_on_timer_timeout"]
-[connection signal="timeout" from="Spawners/Spawner2/Timer" to="Spawners/Spawner2" method="_on_timer_timeout"]
