@@ -68,22 +68,23 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		die()
 
-func die():
-	print("Enemy died!")
+func die(give_score := true, drop_loot := true):
+	print("Enemy died!") 
+	if dead:
+		return
+	dead = true
+	died.emit(self)
+	
 	var sound = die_sound
 	remove_child(sound)
 	get_parent().add_child(sound)
 	sound.global_position = global_position
 	sound.play()
-	
-	if health <= 0:
-		dead = true
-		died.emit(self)
-		print("kuoli")
 
-	GameManager.add_score(20)
+	if give_score:
+		GameManager.add_score(10)
 	
-	if coin_scene:
+	if drop_loot and coin_scene:
 		var coin = coin_scene.instantiate()
 		get_parent().add_child(coin)
 		var spawn_pos = global_position + Vector2(randf_range(-50, 50), -30)
@@ -92,8 +93,6 @@ func die():
 		spawn_pos.y = clamp(spawn_pos.y, 0, 400)
 
 		coin.global_position = spawn_pos #Tässä voi muokata mihin kohtaan kolikko spawnaa
-	else:
-		print("coin_scene is not set!")
 	
 
 		
