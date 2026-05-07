@@ -5,6 +5,8 @@ signal died(enemy)
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var coin_scene: PackedScene
+@onready var die_sound: AudioStreamPlayer2D = $DieSound
+
 
 
 const speed = 50.0
@@ -68,6 +70,12 @@ func take_damage(amount: int) -> void:
 
 func die():
 	print("Enemy died!")
+	var sound = die_sound
+	remove_child(sound)
+	get_parent().add_child(sound)
+	sound.global_position = global_position
+	sound.play()
+	
 	if health <= 0:
 		dead = true
 		died.emit(self)
@@ -78,9 +86,16 @@ func die():
 	if coin_scene:
 		var coin = coin_scene.instantiate()
 		get_parent().add_child(coin)
-		coin.global_position = global_position + Vector2(randf_range(-100, 100), -50) #Tässä voi muokata mihin kohtaan kolikko spawnaa
+		var spawn_pos = global_position + Vector2(randf_range(-50, 50), -30)
+
+		spawn_pos.x = clamp(spawn_pos.x, 0, 512)
+		spawn_pos.y = clamp(spawn_pos.y, 0, 400)
+
+		coin.global_position = spawn_pos #Tässä voi muokata mihin kohtaan kolikko spawnaa
 	else:
 		print("coin_scene is not set!")
+	
+
 		
 	call_deferred("queue_free")
 

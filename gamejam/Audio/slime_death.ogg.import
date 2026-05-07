@@ -2,7 +2,11 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
+<<<<<<< Updated upstream
 uid="uid://dqfmlt7snksd0"
+=======
+uid="uid://bpen81v5uq127"
+>>>>>>> Stashed changes
 path="res://.godot/imported/slime_death.ogg-30c6562ff9a674260a31b391aebd4659.oggvorbisstr"
 
 [deps]
