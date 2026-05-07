@@ -15,6 +15,8 @@ var _score : int = 0
 var max_lives: int = 3
 var current_lives: int = 3
 var can_take_damage = true
+#Players highest scores
+var high_score : int = 0
 
 @export var damage_cooldown = 0.5
 
@@ -52,6 +54,9 @@ func add_score(amount: int) -> void:
 	# Only a positive amount can be added to the score
 	if amount > 0:
 		set_score(_score + amount)
+		if _score > high_score:
+			high_score = _score
+			save_high_score()
 
 func get_score() -> int:
 	return _score
@@ -63,3 +68,12 @@ func set_score(new_score : int) -> void:
 	score_changed.emit(_score)
 
 	print("Score: %s" % _score)
+	
+func save_high_score():
+	var file = FileAccess.open("user://save.data", FileAccess.WRITE)
+	file.store_var(high_score)
+
+func load_high_score():
+	if FileAccess.file_exists("user://save.data"):
+		var file = FileAccess.open("user://save.data", FileAccess.READ)
+		high_score = file.get_var()

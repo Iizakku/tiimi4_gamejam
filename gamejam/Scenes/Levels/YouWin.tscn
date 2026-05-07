@@ -1,0 +1,243 @@
+[gd_scene load_steps=18 format=3 uid="uid://d0pfh1lxtbwfw"]
+
+[ext_resource type="Script" uid="uid://c33ro14h7njdh" path="res://Scenes/Levels/game_over.gd" id="1_fxbpm"]
+[ext_resource type="Texture2D" uid="uid://c3481qag5fyj0" path="res://Art/Mainmenu/mainmenu.png" id="2_aqauf"]
+[ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="3_prerj"]
+[ext_resource type="FontFile" uid="uid://gjrvinpgsxyq" path="res://Fonts/PixelOperator8.ttf" id="4_4ta8n"]
+[ext_resource type="Script" uid="uid://bpygvh3hg7w8l" path="res://Scenes/Levels/highest.gd" id="5_aqauf"]
+[ext_resource type="Script" uid="uid://cs3t8aueq7t56" path="res://Scenes/Levels/scorelabel.gd" id="6_aqauf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_stgsc"]
+texture = ExtResource("2_aqauf")
+modulate_color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts6st"]
+bg_color = Color(0.10980392, 0.047058824, 0.23529412, 0.827451)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opedl"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0056611495, 0.0056611532, 0.005661142, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5inm"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kd5ys"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vj44g"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0056611495, 0.0056611532, 0.005661142, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7i03"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmor3"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohh8m"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dprxf"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7qr7"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fxbpm")
+
+[node name="Taustakuva" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_stgsc")
+
+[node name="Victory" type="Label" parent="Taustakuva"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -144.0
+offset_top = -133.0
+offset_right = 142.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.4, 0.45490196, 0.8235294, 0.41568628)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_prerj")
+theme_override_font_sizes/font_size = 20
+text = "YOU WIN!"
+horizontal_alignment = 1
+
+[node name="panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -80.0
+offset_right = 182.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ts6st")
+
+[node name="MainMenu" type="Button" parent="panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = 22.5
+offset_right = 75.0
+offset_bottom = 59.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_4ta8n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_opedl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w5inm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kd5ys")
+text = "Main Menu"
+
+[node name="Startgame" type="Button" parent="panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -23.5
+offset_right = 74.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("4_4ta8n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vj44g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f7i03")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mmor3")
+text = "Start  game"
+
+[node name="Quit" type="Button" parent="panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = 67.5
+offset_right = 75.0
+offset_bottom = 103.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_4ta8n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ohh8m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dprxf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q7qr7")
+text = "Quit"
+
+[node name="Highest" type="Label" parent="panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -60.5
+offset_right = 62.0
+offset_bottom = -36.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_prerj")
+theme_override_font_sizes/font_size = 16
+text = "HIGHEST RECORD:"
+script = ExtResource("5_aqauf")
+
+[node name="Score" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 19.0
+offset_right = 274.0
+offset_bottom = 43.0
+theme_override_fonts/font = ExtResource("3_prerj")
+theme_override_font_sizes/font_size = 16
+text = "GAME SCORE: "
+script = ExtResource("6_aqauf")
+
+[connection signal="pressed" from="panel/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="panel/Startgame" to="." method="_on_startgame_pressed"]
+[connection signal="pressed" from="panel/Quit" to="." method="_on_quit_pressed"]
