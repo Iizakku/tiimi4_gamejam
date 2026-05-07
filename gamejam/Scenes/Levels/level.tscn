@@ -103,7 +103,7 @@ shape = SubResource("WorldBoundaryShape2D_j3yal")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_j3yal")
-volume_db = -15.0
+volume_db = -8.0
 autoplay = true
 parameters/looping = true
 
