@@ -67,7 +67,14 @@ func die():
 	if coin_scene:
 		var coin = coin_scene.instantiate()
 		get_parent().add_child(coin)
-		coin.global_position = global_position + Vector2(randf_range(-100, 100), -40) #Tässä voi muokata mihin kohtaan kolikko spawnaa
+		
+		var spawn_pos = global_position + Vector2(randf_range(-50, 50), -30)
+
+		spawn_pos.x = clamp(spawn_pos.x, 0, 512)
+		spawn_pos.y = clamp(spawn_pos.y, 0, 400)
+
+		coin.global_position = spawn_pos
+		
 	else:
 		print("coin_scene is not set!")
 		
