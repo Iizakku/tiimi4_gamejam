@@ -57,14 +57,13 @@ func take_damage(amount: int) -> void:
 		die()
 
 func die(give_score := true, drop_loot := true):
-	print("Enemy died!")
-<<<<<<< Updated upstream
+	print("Enemy died!") 
 	if dead:
 		return
 	dead = true
 	died.emit(self)
 	print("kuoli")
-=======
+
 	var sound = die_sound_2
 	remove_child(sound)
 	get_parent().add_child(sound)
@@ -75,7 +74,6 @@ func die(give_score := true, drop_loot := true):
 		dead = true
 		died.emit(self)
 		print("kuoli")
->>>>>>> Stashed changes
 
 	if give_score:
 		GameManager.add_score(10)
