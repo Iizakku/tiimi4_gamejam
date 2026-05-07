@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://2prfgwkcmtgu" path="res://Code/Level/spawner_2.gd" id="5_rv5g2"]
 [ext_resource type="PackedScene" uid="uid://c7b724rakr4r1" path="res://Scenes/Levels/ui.tscn" id="6_lhx7y"]
 [ext_resource type="Script" uid="uid://dgng7n1wow7rl" path="res://Code/Level/spawner.gd" id="6_rv5g2"]
-[ext_resource type="PackedScene" path="res://Scenes/Levels/pause_menu.tscn" id="9_jbixu"]
+[ext_resource type="PackedScene" uid="uid://cqhqwwrp817hf" path="res://Scenes/Levels/pause_menu.tscn" id="9_jbixu"]
 [ext_resource type="Script" uid="uid://xtjr44vm8r21" path="res://Code/Level/killzone.gd" id="10_rxcld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5435"]
