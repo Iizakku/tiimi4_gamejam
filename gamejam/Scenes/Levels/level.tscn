@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://jaex2211lmyr"]
+[gd_scene load_steps=19 format=3 uid="uid://jaex2211lmyr"]
 
 [ext_resource type="PackedScene" uid="uid://b6cv6tuwyibfu" path="res://Scenes/Characters/player.tscn" id="1_f1n8c"]
 [ext_resource type="Script" uid="uid://cldhofoo88aks" path="res://Code/Level/level.gd" id="1_i5435"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://xtjr44vm8r21" path="res://Code/Level/killzone.gd" id="10_rxcld"]
 [ext_resource type="AudioStream" uid="uid://q35hwguf1u6v" path="res://Audio/Memoraphile_Spooky _Dungeon.mp3" id="11_j3yal"]
 [ext_resource type="PackedScene" uid="uid://nhjneo3dq57" path="res://Scenes/Levels/LevelObjects/stop_button.tscn" id="12_r0lyn"]
+[ext_resource type="Script" uid="uid://bx42l0rbhyefw" path="res://Code/Level/batspawner.gd" id="13_c5s4o"]
+[ext_resource type="PackedScene" uid="uid://dsqlyp63v0fx8" path="res://Scenes/Characters/enemy_3.tscn" id="14_kogc4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j3yal"]
 distance = -400.0
@@ -118,8 +120,18 @@ collision_layer = 2
 position = Vector2(514, -10)
 shape = SubResource("SegmentShape2D_i5435")
 
+[node name="BatSpawner" type="Node2D" parent="."]
+position = Vector2(-29, 159)
+script = ExtResource("13_c5s4o")
+enemy_3_scene = ExtResource("14_kogc4")
+
+[node name="Timer" type="Timer" parent="BatSpawner"]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="Killzone" to="Killzone" method="_on_body_entered"]
 [connection signal="body_entered" from="Portals/LeftPortal" to="." method="_on_left_portal_body_entered"]
 [connection signal="body_entered" from="Portals/RightPortal" to="." method="_on_right_portal_body_entered"]
 [connection signal="timeout" from="Spawners/Spawner/Timer" to="Spawners/Spawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Spawners/Spawner2/Timer" to="Spawners/Spawner2" method="_on_timer_timeout"]
+[connection signal="timeout" from="BatSpawner/Timer" to="BatSpawner" method="_on_timer_timeout"]
