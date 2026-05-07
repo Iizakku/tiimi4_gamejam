@@ -6,6 +6,9 @@ signal score_changed(new_score : int)
 # signals if lives changed
 signal lives_changed(current_lives : int)
 
+func game_over():
+	get_tree().change_scene_to_file("res://Scenes/Levels/game_over.tscn")
+
 #Player's score in this session
 var _score : int = 0
 # Player's lives
@@ -39,11 +42,7 @@ func die():
 	current_lives = max_lives
 	lives_changed.emit(current_lives)
 
-	# reset score
-	reset()
-	
-	# reload the whole level 
-	get_tree().call_deferred("reload_current_scene")
+	game_over()
 
 # score
 func reset() -> void:
