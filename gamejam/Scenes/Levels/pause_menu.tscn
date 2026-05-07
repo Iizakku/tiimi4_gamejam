@@ -4,37 +4,11 @@
 [ext_resource type="FontFile" uid="uid://gjrvinpgsxyq" path="res://Fonts/PixelOperator8.ttf" id="2_kud7c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o3s6"]
-bg_color = Color(0.10980392, 0.047058824, 0.23529412, 0.89411765)
+bg_color = Color(0.10980392, 0.047058824, 0.23529412, 0.8627451)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76vfl"]
-bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.0056611495, 0.0056611532, 0.005661142, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kud7c"]
-bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvtw4"]
-bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gt76x"]
 bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
@@ -56,6 +30,32 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l5uh"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76vfl"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0056611495, 0.0056611532, 0.005661142, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kud7c"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvtw4"]
 bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
@@ -117,6 +117,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4o3s6")
 
+[node name="MainMenu" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -20.5
+offset_right = 85.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_kud7c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gt76x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o8xjl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7l5uh")
+text = "Main Menu"
+
 [node name="Resume" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
@@ -137,25 +156,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_kud7c")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dvtw4")
 text = "Resume"
 
-[node name="MainMenu" type="Button" parent="Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -85.5
-offset_top = -20.5
-offset_right = 85.5
-offset_bottom = 20.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_kud7c")
-theme_override_styles/normal = SubResource("StyleBoxFlat_gt76x")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_o8xjl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7l5uh")
-text = "Main Menu"
-
 [node name="Quit" type="Button" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
@@ -175,6 +175,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_26npv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wijsk")
 text = "Quit"
 
-[connection signal="pressed" from="Panel/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Panel/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
