@@ -6,6 +6,20 @@ extends Node2D
 @onready var left_spawn: Marker2D = $LeftSpawn
 @onready var right_spawn: Marker2D = $RightSpawn
 
+var enemies_killed = 0
+
+func _on_enemy_died(enemy):
+	enemies_killed += 1
+
+	print("Killed:", enemies_killed)
+	print("Enemy was:", enemy.name)
+
+	if enemies_killed >= 15:
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file("res://Scenes/Levels/level_2.tscn")
+	
+	
+
 func turn_sprite(body: Node2D, flip: bool) -> void:
 	for child in body.get_children():
 		if child is Sprite2D or child is AnimatedSprite2D:

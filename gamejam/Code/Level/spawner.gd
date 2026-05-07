@@ -14,5 +14,7 @@ func _on_timer_timeout() -> void:
 	var enemy = enemy_scene.instantiate()
 	enemy.position = position
 	get_parent().add_child(enemy)
+	var level = get_tree().current_scene
+	enemy.died.connect(level._on_enemy_died)
 	
 	current_enemies += 1

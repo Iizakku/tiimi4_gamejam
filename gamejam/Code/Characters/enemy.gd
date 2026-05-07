@@ -1,6 +1,8 @@
 extends RigidBody2D
 class_name enemy
 
+signal died(enemy)
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var coin_scene: PackedScene
 
@@ -9,6 +11,7 @@ const speed = 50.0
 var direction = -1.0
 var health = 1
 var invulnerable = false
+var dead = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -51,6 +54,10 @@ func take_damage(amount: int) -> void:
 
 func die():
 	print("Enemy died!")
+	if health <= 0:
+		dead = true
+		died.emit(self)
+		print("kuoli")
 
 	GameManager.add_score(10)
 	
