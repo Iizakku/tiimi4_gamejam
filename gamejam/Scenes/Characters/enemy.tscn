@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dd55s5ortus1v" path="res://Code/Characters/enemy.gd" id="1_b1c4r"]
 [ext_resource type="Texture2D" uid="uid://ceqlfwen0ye0l" path="res://Art/Sprites/slime_green.png" id="1_lsx3x"]
-[ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Code/Level/coin.tscn" id="2_ixshx"]
-[ext_resource type="AudioStream" uid="uid://bpen81v5uq127" path="res://Audio/slime_death.ogg" id="4_4453e"]
+[ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Scenes/Levels/LevelObjects/coin.tscn" id="2_ixshx"]
+[ext_resource type="AudioStream" uid="uid://btjnidps130v7" path="res://Audio/slime_death.ogg" id="4_4453e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b1c4r"]
 friction = 0.0
