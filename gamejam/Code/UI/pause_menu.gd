@@ -3,7 +3,7 @@ extends Control
 var _is_paused: bool = false
 
 func _ready() -> void:
-	set_paused(false) # piilottaa menun alussa
+	set_paused(false) # hide menu at the beginning
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("pause"):

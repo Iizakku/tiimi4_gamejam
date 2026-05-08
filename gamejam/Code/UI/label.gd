@@ -1,7 +1,7 @@
 extends Label
 
 func _ready() -> void:
-	# Alkuperäiset scoret
+	# Original scores
 	update_label(GameManager.get_score())
 	
 	

@@ -27,7 +27,7 @@ func turn_sprite(body: Node2D, flip: bool) -> void:
 
 func _on_left_portal_body_entered(body: Node2D) -> void:
 	if body is RigidBody2D and body.is_in_group("enemies"):
-		# Otetaan valmis sijainti Marker2D-pisteestä oikealta puolelta
+		# take the finished location from the Marker2D point on the right side
 		var target_position = right_spawn.global_position
 		var new_position = Transform2D(body.global_transform.get_rotation(), target_position)
 		

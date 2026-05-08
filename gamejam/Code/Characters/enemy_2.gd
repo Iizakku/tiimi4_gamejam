@@ -92,13 +92,11 @@ func die(give_score := true, drop_loot := true):
 		spawn_pos.x = clamp(spawn_pos.x, 0, 512)
 		spawn_pos.y = clamp(spawn_pos.y, 0, 400)
 
-		coin.global_position = spawn_pos #Tässä voi muokata mihin kohtaan kolikko spawnaa
-	
-
+		coin.global_position = spawn_pos # Here you can edit where the coin spawns.
 		
 	call_deferred("queue_free")
 
-# Tällä pysäytetään vihollinen
+# This will freeze the enemy.
 func freeze_enemy(duration: float):
 	print("Enemy freeze")	
 	set_deferred("freeze", true) 
