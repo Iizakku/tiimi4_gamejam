@@ -1,43 +1,64 @@
-[gd_scene load_steps=14 format=3 uid="uid://b87gsptlg5d6w"]
+[gd_scene load_steps=17 format=3 uid="uid://b87gsptlg5d6w"]
 
 [ext_resource type="Script" uid="uid://dd55s5ortus1v" path="res://Code/Characters/enemy.gd" id="1_b1c4r"]
-[ext_resource type="Texture2D" uid="uid://ceqlfwen0ye0l" path="res://Art/Sprites/slime_green.png" id="1_lsx3x"]
 [ext_resource type="PackedScene" uid="uid://bxqokwuh0cjou" path="res://Scenes/Levels/LevelObjects/coin.tscn" id="2_ixshx"]
+[ext_resource type="Texture2D" uid="uid://drgv4cfgdrm63" path="res://Art/Sprites/kurpitsa.png" id="3_4453e"]
 [ext_resource type="AudioStream" uid="uid://btjnidps130v7" path="res://Audio/slime_death.ogg" id="4_4453e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b1c4r"]
 friction = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b1c4r"]
-atlas = ExtResource("1_lsx3x")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ixshx"]
-atlas = ExtResource("1_lsx3x")
-region = Rect2(24, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4453e"]
-atlas = ExtResource("1_lsx3x")
-region = Rect2(48, 24, 24, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_8cp46"]
-atlas = ExtResource("1_lsx3x")
-region = Rect2(72, 24, 24, 24)
+atlas = ExtResource("3_4453e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13ioh"]
+atlas = ExtResource("3_4453e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwe5h"]
+atlas = ExtResource("3_4453e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr4mm"]
+atlas = ExtResource("3_4453e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t03nw"]
+atlas = ExtResource("3_4453e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43qwk"]
+atlas = ExtResource("3_4453e")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwpqh"]
+atlas = ExtResource("3_4453e")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_13ioh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b1c4r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ixshx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4453e")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_8cp46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13ioh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwe5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr4mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t03nw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43qwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwpqh")
 }],
 "loop": true,
 "name": &"idle",
@@ -45,14 +66,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b1c4r"]
-radius = 3.9999962
+radius = 4.9999943
 height = 13.999983
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwe5h"]
 size = Vector2(10, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ixshx"]
-size = Vector2(16, 6.846154)
+size = Vector2(16, 8.423077)
 
 [node name="Enemy" type="RigidBody2D" groups=["enemies"]]
 collision_layer = 2
@@ -63,12 +84,13 @@ coin_scene = ExtResource("2_ixshx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_13ioh")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(1.8626451e-09, 8.000001)
+position = Vector2(0, 3)
 rotation = -1.5723352
 shape = SubResource("CapsuleShape2D_b1c4r")
 
@@ -76,7 +98,7 @@ shape = SubResource("CapsuleShape2D_b1c4r")
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StompArea"]
-position = Vector2(0, 1)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_gwe5h")
 debug_color = Color(0, 0.64929855, 0.16138288, 0.41960785)
 
@@ -84,7 +106,7 @@ debug_color = Color(0, 0.64929855, 0.16138288, 0.41960785)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
-position = Vector2(-1.7881393e-07, 8.559999)
+position = Vector2(0, 4.2115383)
 shape = SubResource("RectangleShape2D_ixshx")
 debug_color = Color(0.99982554, 0, 0.11539257, 0.41960785)
 
