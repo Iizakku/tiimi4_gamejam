@@ -1,0 +1,398 @@
+[gd_scene load_steps=24 format=3 uid="uid://dl7k7yca4msxc"]
+
+[ext_resource type="Texture2D" uid="uid://c3481qag5fyj0" path="res://Art/Mainmenu/mainmenu.png" id="1_d2tbo"]
+[ext_resource type="Script" path="res://Scenes/Levels/main_menu.gd" id="1_v2at7"]
+[ext_resource type="FontFile" uid="uid://gjrvinpgsxyq" path="res://Fonts/PixelOperator8.ttf" id="2_v2at7"]
+[ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="3_0t1wx"]
+[ext_resource type="Texture2D" uid="uid://btk4wcxkftij6" path="res://Art/Mainmenu/Keyboard Extras.png" id="5_cwjnk"]
+[ext_resource type="Texture2D" uid="uid://bs56efkf3l3hu" path="res://Art/Mainmenu/Keyboard Letters and Symbols.png" id="6_iruej"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xwnjv"]
+texture = ExtResource("1_d2tbo")
+modulate_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luq7i"]
+bg_color = Color(0.14901961, 0.16862746, 0.40784314, 0.45490196)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_82l7r"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xmls"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0g5v"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybd2e"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cwjnk"]
+bg_color = Color(0.21005294, 0.2360931, 0.5408073, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iruej"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dgdn"]
+bg_color = Color(0.10980392, 0.047058824, 0.23529412, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybd2e"]
+texture = ExtResource("5_cwjnk")
+region_rect = Rect2(63.299553, 31.929848, 32.59601, 15.772255)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x0g5v"]
+texture = ExtResource("6_iruej")
+region_rect = Rect2(31.702152, 0, 31.480068, 17.454697)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cwjnk"]
+texture = ExtResource("6_iruej")
+region_rect = Rect2(0.13965988, 32.543167, 14.746571, 14.746571)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iruej"]
+texture = ExtResource("6_iruej")
+region_rect = Rect2(47.593475, 33.184265, 16.095459, 14.008549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lm8k6"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1w1t"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kv2kq"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp410"]
+bg_color = Color(0.21176471, 0.23529412, 0.5411765, 0.65882355)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v2at7")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xwnjv")
+
+[node name="Help2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = 3.0
+offset_right = 89.5
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_82l7r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xmls")
+text = "Help
+"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = 67.0
+offset_right = 90.0
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x0g5v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ybd2e")
+text = "Quit"
+
+[node name="Startgame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.5
+offset_top = -60.0
+offset_right = 89.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cwjnk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iruej")
+text = "Start game"
+
+[node name="HauntedMansion" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -143.0
+offset_top = -125.0
+offset_right = 143.0
+offset_bottom = -56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.4, 0.45490196, 0.8235294, 0.41568628)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("3_0t1wx")
+theme_override_font_sizes/font_size = 20
+text = "Haunted Mansion
+
+"
+
+[node name="Help" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -80.0
+offset_right = 182.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dgdn")
+
+[node name="GameControls" type="Label" parent="Help"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -87.5
+offset_right = 98.0
+offset_bottom = -64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 16
+text = "Game Controls"
+horizontal_alignment = 1
+
+[node name="Enter" type="Panel" parent="Help"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = -28.5
+offset_right = -9.0
+offset_bottom = 40.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ybd2e")
+
+[node name="Arrows" type="Panel" parent="Help"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 202.0
+offset_top = 68.0
+offset_right = 298.0
+offset_bottom = 123.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_x0g5v")
+
+[node name="A" type="Panel" parent="Help"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 119.0
+offset_right = 248.0
+offset_bottom = 162.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_cwjnk")
+
+[node name="Panel" type="Panel" parent="Help"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 120.0
+offset_right = 301.0
+offset_bottom = 161.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iruej")
+
+[node name="BackButton" type="Button" parent="Help"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 62.5
+offset_right = 64.5
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lm8k6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p1w1t")
+text = "Back"
+
+[node name="Instructions" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -80.0
+offset_right = 182.0
+offset_bottom = 147.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8dgdn")
+
+[node name="Instructions" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -98.0
+offset_top = -87.5
+offset_right = 98.0
+offset_bottom = -64.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 16
+text = "Instructions"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Instructions"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.0
+offset_top = -18.5
+offset_right = 181.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 12
+text = "Kill as many enemies you can and
+ collect coins for some extra points
+
+HINT! use special hitboxes to get
+leverage on enemies
+
+"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="Instructions"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.5
+offset_top = 62.5
+offset_right = 64.5
+offset_bottom = 97.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_v2at7")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_luq7i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kv2kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xp410")
+text = "Start"
+
+[connection signal="pressed" from="Help2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Startgame" to="." method="_on_startgame_pressed"]
+[connection signal="pressed" from="Help/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Instructions/StartButton" to="." method="_on_start_button_pressed"]

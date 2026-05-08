@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=3 uid="uid://cgiea8avtct6s"]
+=======
+[gd_scene load_steps=13 format=3 uid="uid://cqhqwwrp817hf"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://cvvkfe85g757c" path="res://Code/UI/pause_menu.gd" id="1_yafon"]
 [ext_resource type="FontFile" uid="uid://gjrvinpgsxyq" path="res://Fonts/PixelOperator8.ttf" id="2_kud7c"]

@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=7 format=3 uid="uid://cwef20h5y0sg"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://d26wu4frogmv0"]
+>>>>>>> Stashed changes
 
 [ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="1_xwq20"]
 [ext_resource type="Texture2D" uid="uid://c4hank4nxv1v4" path="res://Art/Sprites/Heart&ManaUi.png" id="2_4r020"]

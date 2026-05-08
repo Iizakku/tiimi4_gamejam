@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://2prfgwkcmtgu" path="res://Code/Level/spawner_2.gd" id="5_rv5g2"]
 [ext_resource type="PackedScene" uid="uid://c7b724rakr4r1" path="res://Scenes/UI/ui.tscn" id="6_lhx7y"]
 [ext_resource type="Script" uid="uid://dgng7n1wow7rl" path="res://Code/Level/spawner.gd" id="6_rv5g2"]
-[ext_resource type="PackedScene" uid="uid://cqhqwwrp817hf" path="res://Scenes/UI/pause_menu.tscn" id="9_jbixu"]
+[ext_resource type="PackedScene" uid="uid://cqhqwwrp817hf" path="res://Scenes/Levels/pause_menu.tscn" id="9_jbixu"]
 [ext_resource type="Script" uid="uid://xtjr44vm8r21" path="res://Code/Level/killzone.gd" id="10_rxcld"]
 [ext_resource type="AudioStream" uid="uid://q35hwguf1u6v" path="res://Audio/Memoraphile_Spooky _Dungeon.mp3" id="11_j3yal"]
 [ext_resource type="PackedScene" uid="uid://nhjneo3dq57" path="res://Scenes/Levels/LevelObjects/stop_button.tscn" id="12_r0lyn"]
