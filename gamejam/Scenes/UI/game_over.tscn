@@ -132,7 +132,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("2_rohwx")
 theme_override_font_sizes/font_size = 20
-text = "Game over!
+text = "YOU DIED!
 "
 horizontal_alignment = 1
 

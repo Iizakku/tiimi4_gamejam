@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwef20h5y0sg"]
+
+[ext_resource type="FontFile" uid="uid://bki3djse2umvx" path="res://Fonts/PixelOperator8-Bold.ttf" id="1_xwq20"]
+[ext_resource type="Texture2D" uid="uid://c4hank4nxv1v4" path="res://Art/Sprites/Heart&ManaUi.png" id="2_4r020"]
+[ext_resource type="Texture2D" uid="uid://btk4wcxkftij6" path="res://Art/Mainmenu/Keyboard Extras.png" id="3_bx3gy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r020"]
+bg_color = Color(0.1501219, 0.16849291, 0.40676075, 0.43137255)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.029506551, 0.029506566, 0.029506514, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gm34j"]
+texture = ExtResource("3_bx3gy")
+region_rect = Rect2(36.31147, 0.7358265, 23.483139, 13.669291)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2vap"]
+atlas = ExtResource("2_4r020")
+region = Rect2(21, 2, 11, 9)
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Score" type="Panel" parent="."]
+offset_left = 113.0
+offset_top = 12.0
+offset_right = 199.0
+offset_bottom = 36.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r020")
+
+[node name="Label" type="Label" parent="Score"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 8.0
+offset_right = 78.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("1_xwq20")
+theme_override_font_sizes/font_size = 8
+text = "SCORE: "
+
+[node name="Pause" type="Panel" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -103.0
+offset_top = 14.0
+offset_right = -17.0
+offset_bottom = 38.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r020")
+
+[node name="pause" type="Label" parent="Pause"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 8.0
+offset_right = 74.0
+offset_bottom = 31.0
+theme_override_fonts/font = ExtResource("1_xwq20")
+theme_override_font_sizes/font_size = 8
+text = "PAUSE:"
+
+[node name="esc" type="Panel" parent="Pause"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 1.0
+offset_right = 85.0
+offset_bottom = 21.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gm34j")
+
+[node name="Hearts" type="Panel" parent="."]
+offset_left = 20.0
+offset_top = 12.0
+offset_right = 106.0
+offset_bottom = 36.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r020")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hearts"]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 1.0
+offset_right = 81.0
+offset_bottom = 22.0
+
+[node name="Heart1" type="TextureRect" parent="Hearts/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a2vap")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="Hearts/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a2vap")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="Hearts/HBoxContainer"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a2vap")
+expand_mode = 2
+stretch_mode = 5
