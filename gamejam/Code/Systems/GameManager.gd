@@ -49,6 +49,10 @@ func die():
 # score
 func reset() -> void:
 	set_score(0)
+	current_lives = max_lives
+	lives_changed.emit(current_lives)
+
+	can_take_damage = true
 
 func add_score(amount: int) -> void:
 	# Only a positive amount can be added to the score
