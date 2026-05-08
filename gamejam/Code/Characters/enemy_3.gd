@@ -14,6 +14,7 @@ func _ready() -> void:
 func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
+	animated_sprite_2d.flip_h = true
 	
 	for i in range(get_slide_collision_count()):
 		var collision = get_slide_collision(i)
