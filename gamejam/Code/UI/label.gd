@@ -8,4 +8,4 @@ func _ready() -> void:
 	GameManager.score_changed.connect(update_label)
 	
 func update_label(new_score: int) -> void:
-	text = "Score: " + str(new_score)
+	text = "SCORE: " + str(new_score)
