@@ -11,11 +11,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 func collect(_knight : Player) -> bool:
 	if is_collected:
-		# Esine on jo kerätty, ei mahdollisteta sen keräämistä uudelleen
+		# The item has already been collected, it is not possible to collect it again
 		return false
 
-#TODO Toista keräämiseen liittyvät efektit, kuten äänet ja partikkeli
-#Merkitse esine kerätyksi ja poista se pelimaailmasta
 	is_collected = true
 	queue_free()
 	return true

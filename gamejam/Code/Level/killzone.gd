@@ -1,6 +1,6 @@
 extends Area2D
 
-# Tämä tunnistaa kun vihollinen tippuu pois alatasolta ja poistaa vihollisen 
+# This detects when an enemy falls off a lower level and eliminates the enemy
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
