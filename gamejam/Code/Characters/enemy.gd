@@ -8,7 +8,7 @@ signal died(enemy)
 @onready var die_sound_2: AudioStreamPlayer2D = $DieSound2
 
 
-const speed = 50.0
+const speed = 60.0
 var direction = -1.0
 var health = 1
 var invulnerable = false
