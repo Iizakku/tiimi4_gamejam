@@ -29,6 +29,8 @@ func _integrate_forces(state):
 	var velocity = state.linear_velocity
 	velocity.x = direction * speed
 	state.linear_velocity = velocity
+	
+	animated_sprite_2d.flip_h = true
 
 
 func _on_area_2d_body_entered(body):
