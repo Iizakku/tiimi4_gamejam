@@ -56,18 +56,19 @@ func take_damage(amount: int) -> void:
 	if health <= 0:
 		die()
 
-func die(give_score := true, drop_loot := true):
+func die(give_score := true, drop_loot := true, play_sound := true):
 	print("Enemy died!") 
 	if dead:
 		return
 	dead = true
 	died.emit(self)
 
-	var sound = die_sound_2
-	remove_child(sound)
-	get_parent().add_child(sound)
-	sound.global_position = global_position
-	sound.play()
+	if play_sound:
+		var sound = die_sound_2
+		remove_child(sound)
+		get_parent().add_child(sound)
+		sound.global_position = global_position
+		sound.play()
 
 	if give_score:
 		GameManager.add_score(10)

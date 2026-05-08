@@ -7,4 +7,4 @@ func _on_body_entered(body: Node2D) -> void:
 		print("Enemy has fallen")
 
 		if body.has_method("die"):
-			body.die(false, false)
+			body.die(false, false, false)
