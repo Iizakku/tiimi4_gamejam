@@ -9,7 +9,7 @@ signal died(enemy)
 
 
 
-const speed = 50.0
+const speed = 40.0
 var direction = 1.0
 var health = 2
 var invulnerable = false

@@ -3,7 +3,7 @@ class_name spawner
 
 
 @export var enemy_scene : PackedScene
-@export var max_enemies = 10
+@export var max_enemies = 25
 var current_enemies = 0
 
 
