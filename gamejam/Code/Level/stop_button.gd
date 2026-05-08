@@ -12,7 +12,6 @@ func _on_body_entered(body: Node2D) -> void:
 func activate_freeze():
 	# Find every node in the "enemies" group
 	var all_enemies = get_tree().get_nodes_in_group("enemies")
-	print("Löysin näin monta vihollista: ", all_enemies.size())
 	
 	for _enemy in all_enemies:
 		# Check if the enemy has the freeze function before calling it
