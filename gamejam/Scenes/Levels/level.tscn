@@ -80,7 +80,6 @@ position = Vector2(518, 294)
 [node name="UI" parent="LevelUI" instance=ExtResource("6_lhx7y")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="LevelUI"]
-visible = false
 
 [node name="PauseMenu" parent="LevelUI/CanvasLayer" instance=ExtResource("9_jbixu")]
 
